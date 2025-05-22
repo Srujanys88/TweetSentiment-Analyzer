@@ -19,10 +19,10 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt --verbose
 
 # Copy project files into the container
 COPY . .
-
+EXPOSE 8501
 # Command to run your script
-CMD ["python", "app.py"]
+CMD ["streamlit", "run", "app.py"]

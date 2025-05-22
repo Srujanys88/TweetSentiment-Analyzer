@@ -65,13 +65,13 @@ model_loaded = False
 
 # Load the model
 try:
-    model = load_model(r"D:/sentiment/sentiment/best_model.h5")
+    model = load_model(r"best_model.h5")
     model_loaded = True
 except Exception as e:
     st.error(f"Error loading the model: {e}")
 
 # Load the tokenizer
-TOKENIZER_PATH = r"D:/sentiment/sentiment/tokenizer.pickle"
+TOKENIZER_PATH = r"tokenizer.pickle"
 try:
     with open(TOKENIZER_PATH, 'rb') as handle:
         tokenizer = pickle.load(handle)
